@@ -1,0 +1,793 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.eventHeader {
+  background: linear-gradient(135deg, #ec4899, #f472b6);
+  color: white;
+  padding: 1.25rem 2rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -0.5rem;
+}
+
+.eventInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.eventIcon {
+  font-size: 2rem;
+}
+
+.eventSubtitle {
+  margin: 0.25rem 0 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+.eventActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.eventSelector {
+  background: #fdf2f8;
+  border: 1px solid #fbcfe8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: -0.5rem;
+}
+
+.eventSelector h3 {
+  margin: 0 0 1rem;
+  color: #ec4899;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1.25rem;
+  color: #1a1a1a;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.15s;
+  outline: none;
+  background: white;
+}
+
+.input:focus {
+  border-color: #ec4899;
+  box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.15);
+}
+
+.inputError {
+  border-color: #ef4444;
+}
+
+.errorMsg {
+  font-size: 0.8rem;
+  color: #ef4444;
+}
+
+.serverError {
+  font-size: 0.9rem;
+  color: #ef4444;
+  background: #fef2f2;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.successMsg {
+  font-size: 0.9rem;
+  color: #16a34a;
+  background: #f0fdf4;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.infoMsg {
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-align: center;
+  padding: 1rem;
+}
+
+.formActions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.selectedGuests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.selectedGuestTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  background: #fdf2f8;
+  border: 1px solid #fbcfe8;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #be185d;
+}
+
+.removeGuestBtn {
+  background: none;
+  border: none;
+  color: #ec4899;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.removeGuestBtn:hover {
+  color: #be185d;
+}
+
+.guestSelector {
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.guestSearchWrapper {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.guestSearchWrapper .input {
+  flex: 1;
+}
+
+.guestStats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+  padding: 0 0.25rem;
+}
+
+.guestList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.guestOption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.guestOption:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.guestOptionSelected {
+  background: #fdf2f8;
+  border-color: #f9a8d4;
+}
+
+.guestOptionInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.guestOptionName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.guestOptionDetails {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.checkIcon {
+  color: #ec4899;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  accent-color: #ec4899;
+}
+
+.btn {
+  padding: 0.65rem 1.5rem;
+  background: #ec4899;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn:hover {
+  background: #db2777;
+}
+
+.btn:disabled {
+  background: #f9a8d4;
+  cursor: not-allowed;
+}
+
+.btnSecondary {
+  padding: 0.65rem 1.5rem;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnSecondary:hover {
+  background: #e5e7eb;
+}
+
+.btnSmall {
+  padding: 0.4rem 0.9rem;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnSmall:hover {
+  background: #e5e7eb;
+}
+
+.btnSmallDanger {
+  padding: 0.4rem 0.9rem;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnSmallDanger:hover {
+  background: #fee2e2;
+}
+
+.stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.statItem {
+  flex: 1;
+  text-align: center;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.statValue {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ec4899;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.invitationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.invitationCard {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+.invitationCard:hover {
+  border-color: #f9a8d4;
+}
+
+.invitationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.invitationHeader:hover {
+  background: #fdf2f8;
+}
+
+.invitationInfo {
+  flex: 1;
+}
+
+.invitationName {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: #1a1a1a;
+}
+
+.invitationMeta {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.invitationHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.statusBadge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.statusNotSent {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.statusNotDelivered {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.statusDelivered {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.expandIcon {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-left: 1rem;
+}
+
+.invitationDetails {
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem 1.25rem;
+  background: #fafafa;
+}
+
+.guestsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.guestCard {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.guestCardName {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: #1a1a1a;
+}
+
+.guestTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag {
+  padding: 0.15rem 0.5rem;
+  background: #f3f4f6;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.tagSuccess {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.tagWarning {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.tagDanger {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.guestCardDetail {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.2rem;
+}
+
+.invitationActions {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid #e5e7eb;
+  background: #fafafa;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.statusActions {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: auto;
+}
+
+.btnStatus {
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid;
+  transition: all 0.15s;
+}
+
+.btnNotDelivered {
+  background: #fef3c7;
+  color: #d97706;
+  border-color: #fcd34d;
+}
+
+.btnNotDelivered:hover {
+  background: #fde68a;
+}
+
+.btnDelivered {
+  background: #dcfce7;
+  color: #16a34a;
+  border-color: #86efac;
+}
+
+.btnDelivered:hover {
+  background: #bbf7d0;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.emptyState h2 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.emptyState p {
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.eventGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.eventCard {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: 100%;
+}
+
+.eventCard:hover {
+  border-color: #ec4899;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.1);
+}
+
+.eventCardActive {
+  border-color: #ec4899;
+  background: #fdf2f8;
+}
+
+.eventCard h3,
+.eventCard h4 {
+  margin: 0 0 0.25rem;
+  color: #1a1a1a;
+}
+
+.eventCard p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.selectHint {
+  display: block;
+  margin-top: 0.5rem;
+  color: #ec4899;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.filterContainer {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 0.5rem 1rem;
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filterBtn:hover {
+  background: #e5e7eb;
+}
+
+.filterBtnActive {
+  background: #fdf2f8;
+  color: #be185d;
+  border-color: #f9a8d4;
+  font-weight: 600;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: modalFadeIn 0.2s ease;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  width: min(95%, 550px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: modalScaleIn 0.2s ease-out;
+  overflow: hidden;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.modalCloseBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0.25rem;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.modalCloseBtn:hover {
+  color: #1a1a1a;
+}
+
+.modalBody {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modalFooter {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.paginationInfo {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.filterSelect {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: white;
+  outline: none;
+  cursor: pointer;
+}
+
+@keyframes modalFadeIn {
+  from { background: rgba(0,0,0,0); }
+  to { background: rgba(0,0,0,0.4); }
+}
+
+@keyframes modalScaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 640px) {
+  .filterContainer {
+    flex-direction: column;
+  }
+  
+  .filterBtn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .eventHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .guestsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .invitationActions {
+    flex-wrap: wrap;
+  }
+
+  .statusActions {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+
+  .stats {
+    gap: 0.5rem;
+  }
+
+  .guestSearchWrapper {
+    flex-direction: column;
+  }
+}

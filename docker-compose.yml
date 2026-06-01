@@ -1,0 +1,50 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: wedding_db_prod
+    restart: always
+    environment:
+      POSTGRES_USER: prod_user
+      POSTGRES_PASSWORD: prod_password
+      POSTGRES_DB: wedding_app
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - wedding_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: wedding_backend_prod
+    restart: always
+    env_file:
+      - ./backend/.env
+    environment:
+      - PYTHONPATH=/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - wedding_network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: wedding_frontend_prod
+    restart: always
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - wedding_network
+
+networks:
+  wedding_network:
+    driver: bridge
+
+volumes:
+  postgres_data:

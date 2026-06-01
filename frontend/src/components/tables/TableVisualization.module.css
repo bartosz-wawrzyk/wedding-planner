@@ -1,0 +1,189 @@
+.roundContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.roundTable {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #d4a574, #b8935a);
+  border-radius: 50%;
+  border: 3px solid #8b6914;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.tableLabel {
+  color: white;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.roundSeat {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  z-index: 2;
+  transition: all 0.2s;
+  cursor: default;
+  overflow: hidden;
+  text-align: center;
+  line-height: 1.1;
+  padding: 3px;
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.seatClickable {
+  cursor: pointer;
+}
+
+.seatClickable:hover {
+  transform: scale(1.08) !important;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rectangularVerticalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 1rem;
+  min-height: 300px;
+}
+
+.rectSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.rectSeatVertical {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: default;
+  overflow: hidden;
+  text-align: center;
+  line-height: 1.2;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  width: 95%;
+  min-height: 44px;
+  min-width: 50px;
+}
+
+.rectSeatVertical.seatClickable {
+  cursor: pointer;
+}
+
+.rectSeatVertical.seatClickable:hover {
+  transform: scale(1.08);
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rectTableVertical {
+  width: 150px;
+  min-width: 70px;
+  background: linear-gradient(180deg, #d4a574, #b8935a);
+  border: 3px solid #8b6914;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  margin: 0 1rem;
+}
+
+.tableLabelVertical {
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.seatFree {
+  background: #e5e7eb;
+  color: #9ca3af;
+  border: 2px dashed #d1d5db;
+}
+
+.seatOccupied {
+  background: #7c3aed;
+  color: white;
+  border: 2px solid #6d28d9;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+  width: 100% !important;
+  min-width: 100px;
+  min-height: 44px;
+}
+
+.seatName {
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.seatNumber {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.seatOccupied .seatNumber {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media print {
+  .seatFree {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+  }
+
+  .seatOccupied {
+    background: #000 !important;
+    color: #fff !important;
+    border: 1px solid #000 !important;
+  }
+
+  .roundTable,
+  .rectTableVertical {
+    background: #fff !important;
+    border: 2px solid #000 !important;
+  }
+
+  .tableLabel,
+  .tableLabelVertical {
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+}
